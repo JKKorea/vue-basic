@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>좋아요</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="root">
+		<div v-if="liked">좋아요 눌렀음</div>
+		<button v-else v-on:click="onClickButton">Like</button>
+	</div>
+</body>
+<script>
+	const app = new Vue({
+		el: '#root', // 통제하고 싶은 id
+		data: {
+			liked: false, // 화면이랑 데이터를 일치시키는 것이 중요.
+		},
+		methods: {
+		    onClickButton() {
+		        this.liked = true; // 여기서 this를 데이터를 가르킴.
+				}
+		}
+	});
+</script>
+</html>
