@@ -2,6 +2,12 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const path = require('path');
 
 module.exports = {
+  mode: 'development',
+  // devtool: 'hidden-source-map', 운영환경에서 사용.
+  devtool: 'eval',
+  resolve: {
+    extensions: ['.js', '.vue'],
+  },
   entry: {
     app: path.join(__dirname, 'main.js'),
   },
